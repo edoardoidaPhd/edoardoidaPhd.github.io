@@ -1,8 +1,7 @@
 title: "GMA-IRE Newsletter"
 name: "GMA-IRE Newsletter"
 description: "Aggiornamenti mensili su opportunità, eventi, e ricerca"
-url: "https://edoardoidaPhd.github.io/GMA-IRE-newsletter"
-baseurl: "/newsletter" # se il repo NON è <username>.github.io
+url: "https://edoardoidaPhd.github.io/GMA-IRE-newsletter/"
 theme: minimal-mistakes-jekyll
 
 # impostazioni newsletter
@@ -10,15 +9,14 @@ paginate: 5
 paginate_path: "/page:num/"
 
 # autore
-#author:
-#  name   : "Edoardo Ida'"
-#  avatar : "..."
-#  bio    : "Ricercatore, newsletter editor"
-#  location : "Italia"
-#  links:
-#    - label: "GitHub"
-#      icon: "fab fa-fw fa-github"
-#      url: "https://github.com/username"
+author:
+  name   : "Edoardo Ida'"
+  bio    : "Ricercatore, newsletter editor"
+  location : "Italia"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/username"
 
 # plugins (obbligatori su GH Pages)
 plugins:
