@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Newsletter Settembre 2025"
 date: 2025-09-01
 ---
