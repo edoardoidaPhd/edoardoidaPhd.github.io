@@ -1,10 +1,29 @@
 ---
-layout: home
-author_profile: true
+layout: default
 title: "Home"
 ---
 
-Benvenuti nella **Newsletter Accademica**.  
-Qui trovate gli aggiornamenti mensili su opportunità di ricerca, eventi, e collaborazioni.  
+{% include header.html %}
 
-➡️ Seleziona un mese dal menù o scorri gli ultimi post.
+# Benvenuti nella Newsletter Accademica
+
+Qui trovi aggiornamenti mensili su opportunità di ricerca, eventi e collaborazioni.
+
+---
+
+## Newsletter più recenti
+
+<ul>
+{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.date | date: "%B %Y" }}
+  </li>
+{% endfor %}
+</ul>
+
+---
+
+## About {#about}
+
+Questa newsletter raccoglie opportunità, eventi e risorse per la comunità accademica.
+
