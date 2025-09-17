@@ -24,4 +24,4 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-archives
-- jekyll-remote-theme
+  - jekyll-remote-theme
