@@ -6,8 +6,6 @@ title: "Home"
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
-{% include header.html %}
-
 <img src="{{ site.baseurl }}/assets/img/logo.png" alt="Newsletter Logo" style="max-width:200px;margin-bottom:1rem;">
 
 # Benvenuti nella Newsletter Accademica
