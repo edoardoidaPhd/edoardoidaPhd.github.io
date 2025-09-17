@@ -1,0 +1,60 @@
+/* font e colori */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+    padding: 1rem;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    background: #004080;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* intestazioni */
+h1, h2, h3 {
+    color: #004080;
+}
+
+/* box per le sezioni */
+.post-section {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #004080;
+    border-radius: 0.3rem;
+}
+
+/* link */
+a {
+    color: #0066cc;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2rem;
+}
