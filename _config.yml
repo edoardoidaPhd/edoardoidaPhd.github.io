@@ -2,7 +2,7 @@ title: "GMA-IRE Newsletter"
 name: "GMA-IRE Newsletter"
 description: "Aggiornamenti mensili su opportunità, eventi, e ricerca"
 url: "https://edoardoidaPhd.github.io/"
-theme: minimal-mistakes-jekyll
+
 
 # impostazioni newsletter
 paginate: 5
@@ -25,3 +25,5 @@ plugins:
   - jekyll-paginate
   - jekyll-archives
   - jekyll-remote-theme
+
+remote_theme: "mmistakes/minimal-mistakes"
