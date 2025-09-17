@@ -1,10 +1,8 @@
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-
 ---
 layout: default
 title: "Home"
 ---
-
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 {% include header.html %}
 
 # Benvenuti nella Newsletter Accademica
