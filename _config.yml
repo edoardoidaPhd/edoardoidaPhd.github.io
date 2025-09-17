@@ -26,4 +26,4 @@ plugins:
   - jekyll-archives
   - jekyll-remote-theme
 
-remote_theme: "mmistakes/minimal-mistakes@4.20.2"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
