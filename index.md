@@ -2,8 +2,13 @@
 layout: default
 title: "Home"
 ---
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
 {% include header.html %}
+
+<img src="{{ site.baseurl }}/assets/img/logo.png" alt="Newsletter Logo" style="max-width:200px;margin-bottom:1rem;">
 
 # Benvenuti nella Newsletter Accademica
 
@@ -11,7 +16,7 @@ Qui trovi aggiornamenti mensili su opportunità di ricerca, eventi e collaborazi
 
 ---
 
-## Newsletter più recenti
+## Newsletter più recenti {#archive}
 
 <ul>
 {% for post in site.posts %}
@@ -27,3 +32,6 @@ Qui trovi aggiornamenti mensili su opportunità di ricerca, eventi e collaborazi
 
 Questa newsletter raccoglie opportunità, eventi e risorse per la comunità accademica.
 
+<footer>
+&copy; 2025 Academic Newsletter
+</footer>
