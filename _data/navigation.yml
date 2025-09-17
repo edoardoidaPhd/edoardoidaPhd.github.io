@@ -1,0 +1,7 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Archivio"
+    url: /year-archive/
+  - title: "About"
+    url: /about/
