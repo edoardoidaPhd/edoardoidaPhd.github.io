@@ -2,8 +2,6 @@ title: "GMA-IRE Newsletter"
 name: "GMA-IRE Newsletter"
 description: "Aggiornamenti mensili su opportunità, eventi, e ricerca"
 url: "https://edoardoidaPhd.github.io/"
-baseurl: "/newsletter" 
-
 
 # impostazioni newsletter
 paginate: 5
