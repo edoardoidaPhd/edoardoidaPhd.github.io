@@ -4,23 +4,40 @@ title: Tags
 permalink: /tags/
 ---
 
-<h1>Tags</h1>
+<h1>Archivio per categoria</h1>
+
+<h2>Collaborazione</h2>
 <ul>
-{% assign tags = site.tags | sort %}
-{% for tag in tags %}
-  <li>
-    <a href="#{{ tag[0] }}">{{ tag[0] }}</a> ({{ tag[1].size }})
-  </li>
+{% for nl in site.data.newsletters %}
+  {% for item in nl[1].collaborazione %}
+    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
+  {% endfor %}
 {% endfor %}
 </ul>
 
-<hr>
-
-{% for tag in tags %}
-  <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
-  <ul>
-  {% for post in tag[1] %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+<h2>Eventi</h2>
+<ul>
+{% for nl in site.data.newsletters %}
+  {% for item in nl[1].eventi %}
+    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
   {% endfor %}
-  </ul>
 {% endfor %}
+</ul>
+
+<h2>Lavoro</h2>
+<ul>
+{% for nl in site.data.newsletters %}
+  {% for item in nl[1].lavoro %}
+    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
+  {% endfor %}
+{% endfor %}
+</ul>
+
+<h2>Risorse</h2>
+<ul>
+{% for nl in site.data.newsletters %}
+  {% for item in nl[1].risorse %}
+    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
+  {% endfor %}
+{% endfor %}
+</ul>
