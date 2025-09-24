@@ -1,0 +1,17 @@
+---
+layout: default
+title: Home
+---
+
+<h1>Latest Newsletter</h1>
+
+{% assign latest = site.data.newsletters["2025-09"] %}
+
+<h2>{{ latest.title }} ({{ latest.date }})</h2>
+
+<h3>Collaborazione</h3>
+<ul>
+{% for item in latest.collaborazione %}
+  <li>{{ item }}</li>
+{% endfor %}
+</ul>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Newsletter Archive
+title: Archive
 permalink: /archive/
 ---
 
@@ -8,16 +8,5 @@ permalink: /archive/
 
 {% assign newsletters = site.data.newsletters | sort %}
 {% for nl in newsletters %}
-  <h2>{{ nl[1].title }} ({{ nl[1].date }})</h2>
-  <h3>Collaborazione</h3>
-  <ul>{% for item in nl[1].collaborazione %}<li>{{ item }}</li>{% endfor %}</ul>
-
-  <h3>Eventi</h3>
-  <ul>{% for item in nl[1].eventi %}<li>{{ item }}</li>{% endfor %}</ul>
-
-  <h3>Lavoro</h3>
-  <ul>{% for item in nl[1].lavoro %}<li>{{ item }}</li>{% endfor %}</ul>
-
-  <h3>Risorse</h3>
-  <ul>{% for item in nl[1].risorse %}<li>{{ item }}</li>{% endfor %}</ul>
+  <h2><a href="/newsletter/{{ nl[1].date }}/">{{ nl[1].title }}</a></h2>
 {% endfor %}
