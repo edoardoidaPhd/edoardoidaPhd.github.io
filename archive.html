@@ -6,47 +6,62 @@ permalink: /archive/
 
 <h1>Newsletter Archive</h1>
 
-{% assign keys = site.data.newsletters | keys | sort | reverse %}
-{% for k in keys %}
-  {% assign nl = site.data.newsletters[k] %}
-  <article>
-    <h2>{{ nl.title }}</h2>
-    <p><em>{{ nl.date }}</em></p>
+<ul class="archive-list">
+  {% assign keys = site.data.newsletters | keys | sort | reverse %}
+  {% for k in keys %}
+    {% assign nl = site.data.newsletters[k] %}
+    <li>
+      <button class="toggle-btn" onclick="toggleContent('{{ k }}')">
+        {{ nl.title }} ({{ nl.date }})
+      </button>
+      <div id="content-{{ k }}" class="newsletter-content" style="display: none; margin: 1em 0;">
+        {% if nl.collaborazione %}
+          <h3>Collaborazione</h3>
+          <ul>
+            {% for item in nl.collaborazione %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
 
-    {% if nl.collaborazione %}
-      <h3>Collaborazione</h3>
-      <ul>
-        {% for item in nl.collaborazione %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+        {% if nl.eventi %}
+          <h3>Eventi</h3>
+          <ul>
+            {% for item in nl.eventi %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
 
-    {% if nl.eventi %}
-      <h3>Eventi</h3>
-      <ul>
-        {% for item in nl.eventi %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+        {% if nl.lavoro %}
+          <h3>Opportunità di lavoro</h3>
+          <ul>
+            {% for item in nl.lavoro %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
 
-    {% if nl.lavoro %}
-      <h3>Opportunità di lavoro</h3>
-      <ul>
-        {% for item in nl.lavoro %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+        {% if nl.risorse %}
+          <h3>Risorse</h3>
+          <ul>
+            {% for item in nl.risorse %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
 
-    {% if nl.risorse %}
-      <h3>Risorse</h3>
-      <ul>
-        {% for item in nl.risorse %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </article>
-{% endfor %}
+<script>
+function toggleContent(id) {
+  const el = document.getElementById("content-" + id);
+  if (el.style.display === "none") {
+    el.style.display = "block";
+  } else {
+    el.style.display = "none";
+  }
+}
+</script>
