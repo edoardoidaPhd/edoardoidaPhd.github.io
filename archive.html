@@ -1,67 +1,41 @@
----
-layout: default
-title: Archive
-permalink: /archive/
----
-
-<h1>Newsletter Archive</h1>
-
-<ul class="archive-list">
-  {% assign keys = site.data.newsletters | keys | sort | reverse %}
-  {% for k in keys %}
-    {% assign nl = site.data.newsletters[k] %}
-    <li>
-      <button class="toggle-btn" onclick="toggleContent('{{ k }}')">
-        {{ nl.title }} ({{ nl.date }})
-      </button>
-      <div id="content-{{ k }}" class="newsletter-content" style="display: none; margin: 1em 0;">
-        {% if nl.collaborazione %}
-          <h3>Collaborazione</h3>
-          <ul>
-            {% for item in nl.collaborazione %}
-              <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-        {% if nl.eventi %}
-          <h3>Eventi</h3>
-          <ul>
-            {% for item in nl.eventi %}
-              <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-        {% if nl.lavoro %}
-          <h3>Opportunità di lavoro</h3>
-          <ul>
-            {% for item in nl.lavoro %}
-              <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-        {% if nl.risorse %}
-          <h3>Risorse</h3>
-          <ul>
-            {% for item in nl.risorse %}
-              <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
-    </li>
-  {% endfor %}
-</ul>
-
-<script>
-function toggleContent(id) {
-  const el = document.getElementById("content-" + id);
-  if (el.style.display === "none") {
-    el.style.display = "block";
-  } else {
-    el.style.display = "none";
-  }
-}
-</script>
+{% for newsletter in site.data.newsletters %}
+  <div class="newsletter-archive-item">
+    <button class="toggle-btn" onclick="toggleContent('content-{{ newsletter.date }}')">
+      {{ newsletter.title }}
+    </button>
+    <div id="content-{{ newsletter.date }}" class="newsletter-content" style="display: none; margin: 1em 0;">
+      {% if newsletter.collaborazione %}
+        <h3>Collaborazioni</h3>
+        <ul>
+          {% for item in newsletter.collaborazione %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if newsletter.eventi %}
+        <h3>Eventi</h3>
+        <ul>
+          {% for item in newsletter.eventi %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if newsletter.lavoro %}
+        <h3>Lavoro</h3>
+        <ul>
+          {% for item in newsletter.lavoro %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if newsletter.risorse %}
+        <h3>Risorse</h3>
+        <ul>
+          {% for item in newsletter.risorse %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
