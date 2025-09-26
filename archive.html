@@ -1,3 +1,12 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+
+<h1>Newsletter Archive</h1>
+
+<ul class="archive-list">
 {% for newsletter in site.data.newsletters %}
   <div class="newsletter-archive-item">
     <button class="toggle-btn" onclick="toggleContent('content-{{ newsletter.date }}')">
@@ -39,3 +48,16 @@
     </div>
   </div>
 {% endfor %}
+
+</ul>
+
+<script>
+function toggleContent(id) {
+  const el = document.getElementById("content-" + id);
+  if (el.style.display === "none") {
+    el.style.display = "block";
+  } else {
+    el.style.display = "none";
+  }
+}
+</script>
