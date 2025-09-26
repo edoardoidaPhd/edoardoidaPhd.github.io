@@ -58,3 +58,17 @@ footer {
     color: #666;
     margin-top: 2rem;
 }
+
+.download-btn {
+  margin-left: 0.5em;
+  padding: 0.2em 0.5em;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.download-btn:hover {
+  background: #ddd;
+}

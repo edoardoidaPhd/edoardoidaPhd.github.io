@@ -17,7 +17,13 @@ permalink: /
 <h3>Collaborazione</h3>
 <ul>
   {% for item in nl.collaborazione %}
-    <li>{{ item }}</li>
+    <li>
+  {{ item.text | default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
+
   {% endfor %}
 </ul>
 {% endif %}
@@ -26,7 +32,13 @@ permalink: /
 <h3>Eventi</h3>
 <ul>
   {% for item in nl.eventi %}
-    <li>{{ item }}</li>
+    <li>
+  {{ item.text | default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
+
   {% endfor %}
 </ul>
 {% endif %}
@@ -35,7 +47,13 @@ permalink: /
 <h3>Opportunità di lavoro</h3>
 <ul>
   {% for item in nl.lavoro %}
-    <li>{{ item }}</li>
+    <li>
+  {{ item.text | default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
+
   {% endfor %}
 </ul>
 {% endif %}
@@ -44,7 +62,13 @@ permalink: /
 <h3>Risorse</h3>
 <ul>
   {% for item in nl.risorse %}
-    <li>{{ item }}</li>
+    <li>
+  {{ item.text | default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
+
   {% endfor %}
 </ul>
 {% endif %}

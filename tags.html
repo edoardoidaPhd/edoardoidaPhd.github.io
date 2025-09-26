@@ -10,7 +10,12 @@ permalink: /tags/
 <ul>
 {% for nl in site.data.newsletters %}
   {% for item in nl[1].collaborazione %}
-    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
+  <li>
+  {{ item.text <small>({{ nl[1].title }}, {{ nl[1].date }})</small>| default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
   {% endfor %}
 {% endfor %}
 </ul>
@@ -19,7 +24,12 @@ permalink: /tags/
 <ul>
 {% for nl in site.data.newsletters %}
   {% for item in nl[1].eventi %}
-    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
+      <li>
+  {{ item.text <small>({{ nl[1].title }}, {{ nl[1].date }})</small>| default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
   {% endfor %}
 {% endfor %}
 </ul>
@@ -28,7 +38,12 @@ permalink: /tags/
 <ul>
 {% for nl in site.data.newsletters %}
   {% for item in nl[1].lavoro %}
-    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
+     <li>
+  {{ item.text <small>({{ nl[1].title }}, {{ nl[1].date }})</small>| default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
   {% endfor %}
 {% endfor %}
 </ul>
@@ -37,7 +52,12 @@ permalink: /tags/
 <ul>
 {% for nl in site.data.newsletters %}
   {% for item in nl[1].risorse %}
-    <li>{{ item }} <small>({{ nl[1].title }}, {{ nl[1].date }})</small></li>
+      <li>
+  {{ item.text <small>({{ nl[1].title }}, {{ nl[1].date }})</small>| default: item }}
+  {% if item.file %}
+    <a class="download-btn" href="{{ item.file }}" download>📎 Allegato</a>
+  {% endif %}
+</li>
   {% endfor %}
 {% endfor %}
 </ul>
