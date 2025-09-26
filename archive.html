@@ -7,6 +7,13 @@ permalink: /archive/
 <h1>Newsletter Archive</h1>
 
 <ul>
-  <li><a href="/newsletter/2025-09/">Newsletter Settembre 2025</a></li>
-  <!-- Add more as you create files -->
+  {% assign newsletters = site.data.newsletters | sort %}
+  {% for key in newsletters %}
+    {% assign nl = newsletters[key[0]] %}
+    <li>
+      <a href="/newsletter/{{ key[0] }}/">
+        {{ nl.title }} ({{ nl.date }})
+      </a>
+    </li>
+  {% endfor %}
 </ul>
