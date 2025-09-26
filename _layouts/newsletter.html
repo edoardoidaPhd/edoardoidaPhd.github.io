@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% assign nl = site.data.newsletters[page.key] %}
+
+<h1>{{ nl.title }}</h1>
+<p><em>{{ nl.date }}</em></p>
+
+{% if nl.collaborazione %}
+<h3>Collaborazione</h3>
+<ul>
+  {% for item in nl.collaborazione %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if nl.eventi %}
+<h3>Eventi</h3>
+<ul>
+  {% for item in nl.eventi %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if nl.lavoro %}
+<h3>Lavoro</h3>
+<ul>
+  {% for item in nl.lavoro %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if nl.risorse %}
+<h3>Risorse</h3>
+<ul>
+  {% for item in nl.risorse %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
