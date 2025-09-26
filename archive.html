@@ -6,14 +6,47 @@ permalink: /archive/
 
 <h1>Newsletter Archive</h1>
 
-<ul>
-  {% assign newsletters = site.data.newsletters | sort %}
-  {% for key in newsletters %}
-    {% assign nl = newsletters[key[0]] %}
-    <li>
-      <a href="/newsletter/{{ key[0] }}/">
-        {{ nl.title }} ({{ nl.date }})
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+{% assign keys = site.data.newsletters | keys | sort | reverse %}
+{% for k in keys %}
+  {% assign nl = site.data.newsletters[k] %}
+  <article>
+    <h2>{{ nl.title }}</h2>
+    <p><em>{{ nl.date }}</em></p>
+
+    {% if nl.collaborazione %}
+      <h3>Collaborazione</h3>
+      <ul>
+        {% for item in nl.collaborazione %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if nl.eventi %}
+      <h3>Eventi</h3>
+      <ul>
+        {% for item in nl.eventi %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if nl.lavoro %}
+      <h3>Opportunità di lavoro</h3>
+      <ul>
+        {% for item in nl.lavoro %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if nl.risorse %}
+      <h3>Risorse</h3>
+      <ul>
+        {% for item in nl.risorse %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </article>
+{% endfor %}
